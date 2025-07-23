@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creador de Diapositivas Estilo Consultora</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Diapositivas</h2>
+      <ul id="slide-list"></ul>
+      <button id="add-slide">+ Añadir diapositiva</button>
+    </aside>
+    <main class="main-content">
+      <section class="editor">
+        <input id="slide-title" type="text" placeholder="Título de la diapositiva" />
+        <select id="template-select">
+          <option value="">Seleccionar plantilla...</option>
+          <option value="executive">Executive Summary</option>
+          <option value="keyfindings">Key Findings</option>
+          <option value="nextsteps">Next Steps</option>
+          <option value="custom">Personalizada</option>
+        </select>
+        <input id="image-upload" type="file" accept="image/*" />
+        <button id="add-bar-chart">Agregar gráfico de barras</button>
+        <textarea id="slide-content" placeholder="Contenido de la diapositiva (bullets, texto, etc.)"></textarea>
+        <div class="editor-actions">
+          <button id="suggest-content">Sugerir con Claude</button>
+          <button id="export-pptx">Exportar a PPTX</button>
+        </div>
+      </section>
+      <section class="preview">
+        <h3>Previsualización</h3>
+        <div id="slide-preview"></div>
+        <button id="fullscreen-preview">Pantalla completa</button>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html> 

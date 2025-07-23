@@ -1,0 +1,478 @@
+/* General App Layout */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  margin: 0;
+  color: #333;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #003366;
+  padding: 1.5rem;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+main {
+  padding: 2rem;
+}
+
+/* Chart Generator Layout */
+.chart-generator-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  max-width: 1200px;
+  margin: auto;
+}
+
+.editor-panel {
+  flex: 1;
+  min-width: 350px;
+  text-align: left;
+}
+
+.preview-panel {
+  flex: 2;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-panel h3, .preview-panel h3 {
+  color: #003366;
+  border-bottom: 2px solid #e0e3e8;
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* Chart Type Selector */
+.chart-type-selector {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.chart-type-selector button {
+  flex: 1;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid #00509E;
+  background-color: #fff;
+  color: #00509E;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chart-type-selector button:hover {
+  background-color: #f0f4f8;
+}
+
+.chart-type-selector button.active {
+  background-color: #00509E;
+  color: #fff;
+}
+
+/* Data Editor */
+.chart-title-input, .dataset-label-input {
+  width: calc(100% - 20px);
+  padding: 0.7rem;
+  font-size: 1.1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.dataset-label-input {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.data-editor {
+  max-height: 250px;
+  overflow-y: auto;
+  border: 1px solid #e0e3e8;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.data-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+}
+
+.data-row input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Design Options */
+.design-options {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border: 1px solid #e0e3e8;
+    border-radius: 6px;
+    background: #fafcff;
+}
+
+.option-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.option-row:last-child {
+    margin-bottom: 0;
+}
+
+.option-row label {
+    font-weight: 600;
+    color: #333;
+}
+
+.option-row select, .option-row input[type="checkbox"] {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.option-row input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* Export Button */
+.export-button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007A33; /* Verde consultoría */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: background-color 0.2s ease;
+}
+
+.export-button:hover {
+  background-color: #005A26;
+}
+
+/* Chart Preview */
+.chart-preview {
+  width: 100%;
+  height: 450px; /* Altura fija para el gráfico */
+} 
+
+.data-editor h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.labels-editor {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.labels-editor input {
+  flex: 1 1 120px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.data-table-container {
+  overflow-x: auto;
+  margin-bottom: 10px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+
+.data-table th, .data-table td {
+  border: 1px solid #ddd;
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+/* --- Estilos para la columna fija (sticky) --- */
+.data-table th:last-child,
+.data-table td:last-child {
+    position: -webkit-sticky; /* Para Safari */
+    position: sticky;
+    right: 0;
+    background-color: #f8f9fa; /* Un fondo para que no se transparente */
+    z-index: 1;
+}
+
+/* Asegurar que el fondo del encabezado sea consistente */
+.data-table th:last-child {
+    background-color: #e9ecef;
+}
+
+
+.data-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.data-table input {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  transition: border-color 0.2s;
+}
+
+.data-table input:focus {
+  outline: none;
+  border-color: #007bff;
+  background-color: #fff;
+}
+
+.title-and-reset {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.btn-reset {
+    background: none;
+    border: 1px solid #6c757d;
+    color: #6c757d;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 10px; /* Añadido */
+}
+
+.btn-import-excel {
+    background-color: #218838;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-import-excel:hover {
+    background-color: #1e7e34;
+}
+
+.title-and-reset div {
+    display: flex;
+    align-items: center;
+}
+
+.data-table .header-input {
+    background: transparent;
+    border: 1px solid transparent; /* Borde invisible por defecto */
+    font-weight: 600;
+    width: calc(100% - 20px);
+    padding: 2px 4px; /* Pequeño padding */
+    cursor: text; /* Indica que es editable */
+    transition: border-color 0.2s;
+}
+
+.data-table .header-input:focus {
+    outline: none;
+    border-color: #007bff; /* Borde azul al enfocar */
+    background-color: #fff;
+}
+
+.btn-remove-col {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    opacity: 0.6; /* Siempre visible, pero atenuado */
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn-remove-col:hover {
+    opacity: 1; /* Opacidad completa al pasar el ratón */
+    transform: scale(1.1); /* Ligero aumento de tamaño */
+}
+
+.data-table th:hover .btn-remove-col {
+    opacity: 1;
+}
+
+.btn-expand-table {
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-expand-table:hover {
+    background-color: #138496;
+}
+
+.data-table-container-small {
+    height: 180px; /* Altura fija para la vista previa de la tabla */
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.data-table-container-small::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(to top, white, transparent);
+    pointer-events: none;
+}
+
+.add-row-container-small {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+}
+
+/* --- Modal Styles --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 900px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #888;
+  cursor: pointer;
+}
+
+.modal-table-container {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.modal-table-container h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #003366;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-add-row, .btn-remove-row {
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, opacity 0.2s;
+}
+
+.btn-add-row {
+  background-color: #28a745;
+  color: white;
+  border: 1px solid #28a745;
+}
+
+.btn-add-row:hover {
+  background-color: #218838;
+}
+
+.btn-add-row:disabled {
+  background-color: #cccccc;
+  border-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn-remove-row {
+  background-color: #dc3545;
+  color: white;
+  border: 1px solid #dc3545;
+}
+
+.btn-remove-row:hover {
+  background-color: #c82333;
+}
+
+.btn-remove-row:disabled {
+  background-color: #cccccc;
+  border-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+} 
