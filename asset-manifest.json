@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/claude-ui-demo/static/css/main.dedb671f.css",
+    "main.js": "/claude-ui-demo/static/js/main.86b80312.js",
+    "static/js/453.6835a553.chunk.js": "/claude-ui-demo/static/js/453.6835a553.chunk.js",
+    "index.html": "/claude-ui-demo/index.html",
+    "main.dedb671f.css.map": "/claude-ui-demo/static/css/main.dedb671f.css.map",
+    "main.86b80312.js.map": "/claude-ui-demo/static/js/main.86b80312.js.map",
+    "453.6835a553.chunk.js.map": "/claude-ui-demo/static/js/453.6835a553.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dedb671f.css",
+    "static/js/main.86b80312.js"
+  ]
+}
